@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale = 1">
+    <title>CSS Card Flip</title>
+    <style>
+    body{
+    background: rgb(220,20,60);
+    }
+
+/* THE MAINCONTAINER HOLDS EVERYTHING */
+.maincontainer{
+  position: absolute;
+  width: 360px;
+  height: 480px;
+  background: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+.thecard{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 1.5s ease;
+}
+
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+.thecard:hover{
+  transform: rotateY(180deg);
+}
+
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+ .thefront{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background-image: url('assests/Loniticslogo-01.jpg');
+  color: #000;
+}
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+.theback{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background-color: #00308F;
+  color: #333;
+  text-align: center;
+  transform: rotateY(180deg);
+
+}
+
+
+/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+.thefront h1, .theback h1{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.thefront p, .theback p{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+}
+/*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+    </style>
+  </head>
+
+  <body>
+    <div class="maincontainer">
+
+      <div class="thecard">
+
+        <div class="thefront"><img src="assests/Loniticslogo-01.jpg" height="480px" width="360px" alt=""></div>
+
+        <div class="theback">
+          <form action="name">
+            <p class="Heading">Welcome to Lonitics Studio</p>
+            <input type="text" id="name" placeholder="Please Enter your name">
+            <button onclick="passval()">continue</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+
+  <style>
+    input{
+      margin-top: 5%;
+      border-radius: 25px;
+      width: 75%;
+      height: 2rem;
+      align-items: center;
+      padding: 0 5%;
+    }
+    button{
+      font-size: 15px;
+      padding: 3px;
+      border-radius: 10px;
+      margin: 10px;
+      margin-top: 10%;
+      background-color: rgb(220,20,60);
+      width: 130px;
+    }
+    .Heading{
+      margin-top: 130px;
+      color: red;
+      font-weight: 300;
+      font-size: larger;
+    }
+  </style>
+</html>
