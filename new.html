@@ -49,6 +49,7 @@
   overflow: hidden;
   background-image: url('assests/Loniticslogo-01.jpg');
   color: #000;
+  transform: rotateY(180deg);
 }
 
 /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
@@ -64,7 +65,6 @@
   background-color: #00308F;
   color: #333;
   text-align: center;
-  transform: rotateY(180deg);
 
 }
 
@@ -96,51 +96,30 @@
 
         <div class="thefront"><img src="assests/Loniticslogo-01.jpg" height="480px" width="360px" alt=""></div>
 
-        <div class="theback">
-          <form action="new.html">
-            <h2>Welcome to Lonitics Studio<h2>
-            <input type="text" id="name" placeholder="Please Enter your name">
-            <button onclick="passval()">continue</button>
-          </form>
+        <div class="theback"> 
+            
+          <h2>Dear <h2 id="name1"><h2></h2>
+          <p>We appreciate your great efforts on this tough situations</p>
+          <p>Thanks</p>
         </div>
-
       </div>
     </div>
 
   </body>
 
   <style>
-    input{
-      border-radius: 25px;
-      width: 80%;
-      height: 2rem;
-      align-items: center;
-      padding-right: 3%;
-      padding-left: 3%;
-      margin-top: 20px;
-    }
-    button{
-      font-size: 15px;
-      padding: 3px;
-      border-radius: 10px;
-      margin: 10px;
-      margin-top: 30px;
-      background-color: rgb(220,20,60);
-      width: 130px;
-    }
     h2{
-      margin-top: 90px;
+      margin-top: 20px;
       padding: 0;
-      color: red;
+      color: white;
       font-weight: 800;
       padding: 0 30px;
     }
-    
+    p{
+      color: white;
+    }
   </style>
   <script>
-    function passval(){
-      var firstname = document.getElementById("name").value;
-      localStorage.setItem("txtvalue", firstname);
-    }
+    document.getElementById("name1").innerHTML=localStorage.getItem("txtvalue");
   </script>
 </html>
